@@ -3,11 +3,11 @@
 if(!empty($_POST)){
     try
     {
-        $dbh = new PDO('mysql:host=localhost; dbname=2D0', 'root', 'root');
+        $dbh = new PDO('mysql:host=localhost; dbname=2DO', 'root', '');
     }
     catch(PDOException $e)
     {
-        print_r($e->getMessage);
+        echo "niet geslaagt om in te loggen". $e->getMessage();
     }
     $email = $_POST['email'];
     $password = $_POST['password'];
