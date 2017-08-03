@@ -1,3 +1,13 @@
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
 <?php
 
 if(!empty($_POST)){
@@ -37,6 +47,7 @@ if(!empty($_POST)){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+<<<<<<< Updated upstream
 </head>
 <body>
 <form name="loggin" method="post">
@@ -44,6 +55,19 @@ if(!empty($_POST)){
     <fieldset class="fieldset_one">
 
         <legend><a class= "logo" href="#">logo</a></legend>
+=======
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+<script src="js/bootstrap.min.js"></script>
+<div class="container">
+<form class="text-center"name="loggin" method="post">
+
+    <fieldset class="fieldset_one">
+
+        <legend><a class="logo" href="#">logo</a></legend>
+>>>>>>> Stashed changes
         <div>
             <label for="email">Username</label>
             <input id="email" name="email" type="text" placeholder="Username">
@@ -55,11 +79,21 @@ if(!empty($_POST)){
 
     </fieldset>
 
+<<<<<<< Updated upstream
     <button type="submit" >Login</button>
     <p>forgotten your password ?</p>
     <p>Dont have an account? <a href="register.php">Sign up here!</a></p>
     <div class="feedback"></div>
 
 </form>
+=======
+    <button type="submit" class="btn btn-info" >Login</button>
+    <p class="account">Dont have an account? <a href="register.php">Sign up here!</a></p>
+    <div class="feedback"></div>
+    
+    
+
+</form></div>
+>>>>>>> Stashed changes
 </body>
 </html>

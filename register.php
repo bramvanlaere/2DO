@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 /**
  * Created by PhpStorm.
  * User: bramvanlaere
@@ -86,3 +87,67 @@ password = :password");
 </form>
 </body>
 </html>
+=======
+
+
+if( !empty( $_POST ) )
+{
+
+    if( !empty( $_POST['username'] ) && !empty( $_POST['password'] )  ){
+        $conn = new PDO('mysql:host=localhost;dbname=2DO', "root", "");
+
+        $email = $_POST["username"];
+        $options = [
+            'cost'=>12,
+        ];
+        $password = password_hash($_POST["password"],PASSWORD_DEFAULT,$options);
+        $sth = $conn->prepare("INSERT INTO users (email, password) VALUES (:email, :password);");
+        $sth->bindParam(':email', $email);
+        $sth->bindParam(':password', $password);
+        $sth->execute();
+        if( $sth -> execute() )
+        {
+
+            session_start();
+            $_SESSION["user"] = $email;
+            header("Location: login.php");
+        }
+        else
+        {
+            echo "<h1>u bent niet geregistreerd</h1>";
+        }
+
+    }
+}
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <div class="logosp"></div>
+        <form action="" method="post">
+            <div class="username">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Your email or username"></div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Your password">
+            </div>
+            <button>
+                Register
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+>>>>>>> Stashed changes
