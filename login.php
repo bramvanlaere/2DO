@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <?php
 if( isset($_GET['logout'] ) ){
@@ -7,6 +8,19 @@ if( isset($_GET['logout'] ) ){
         session_destroy();
     }
 }
+=======
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
+<?php
+>>>>>>> origin/master
 
 if(!empty($_POST)){
     try
@@ -26,9 +40,13 @@ if(!empty($_POST)){
 
     foreach( $results as $row ){
         if(password_verify($password, $row['password'])){
+<<<<<<< HEAD
             session_start();
             $_SESSION['user_id'] = $email;
             header("Location: profile.php");
+=======
+            header('Location:index.php');
+>>>>>>> origin/master
         }
         else
         {
@@ -47,6 +65,18 @@ if(!empty($_POST)){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+</head>
+<body>
+<form name="loggin" method="post">
+
+    <fieldset class="fieldset_one">
+
+        <legend><a class= "logo" href="#">logo</a></legend>
+=======
+>>>>>>> origin/master
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="css/screen.css">
 </head>
@@ -58,6 +88,10 @@ if(!empty($_POST)){
     <fieldset class="fieldset_one">
 
         <legend><a class="logo" href="#">logo</a></legend>
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> origin/master
         <div>
             <label for="email">Username</label>
             <input id="email" name="email" type="text" placeholder="Username">
@@ -69,6 +103,17 @@ if(!empty($_POST)){
 
     </fieldset>
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+    <button type="submit" >Login</button>
+    <p>forgotten your password ?</p>
+    <p>Dont have an account? <a href="register.php">Sign up here!</a></p>
+    <div class="feedback"></div>
+
+</form>
+=======
+>>>>>>> origin/master
     <button type="submit" class="btn btn-info" >Login</button>
     <p class="account">Dont have an account? <a href="register.php">Sign up here!</a></p>
     <div class="feedback"></div>
@@ -76,5 +121,9 @@ if(!empty($_POST)){
     
 
 </form></div>
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 </body>
 </html>

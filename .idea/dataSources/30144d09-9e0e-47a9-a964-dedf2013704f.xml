@@ -13,14 +13,20 @@
     <schema id="7" parent="1" name="phpmyadmin"/>
     <schema id="8" parent="1" name="test"/>
     <schema id="9" parent="1" name="todos"/>
+<<<<<<< HEAD
     <table id="10" parent="2" name="items"/>
     <table id="11" parent="2" name="users"/>
     <column id="12" parent="10" name="id">
+=======
+    <table id="10" parent="2" name="users"/>
+    <column id="11" parent="10" name="ID">
+>>>>>>> origin/master
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
+<<<<<<< HEAD
     <column id="13" parent="10" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
@@ -52,16 +58,27 @@
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="19" parent="11" name="email">
+=======
+    <column id="12" parent="10" name="email">
+>>>>>>> origin/master
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
+<<<<<<< HEAD
     <column id="20" parent="11" name="password">
+=======
+    <column id="13" parent="10" name="password">
+>>>>>>> origin/master
       <Position>3</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
+<<<<<<< HEAD
     <key id="21" parent="11" name="PRIMARY">
+=======
+    <key id="14" parent="10" name="PRIMARY">
+>>>>>>> origin/master
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
