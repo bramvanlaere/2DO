@@ -11,9 +11,12 @@ $dbh = new PDO('mysql:dbname=2DO;host=localhost','root','');
 
 
 $itemsQuery = $dbh->prepare("SELECT id, name, done FROM items WHERE user = :user");
-$itemsQuery->execute(['user'=> $_SESSION['user_id']]);
-$items = $itemsQuery->rowCount()?$itemsQuery:[];
-foreach ($items as $item){echo $item['name'],'<br>';}
+$itemsQuery->execute(['user' => $_SESSION['user_id']
+]);
+$items = $itemsQuery->rowCount() ? $itemsQuery:[];
+
+
+
 
 ?>
 
@@ -34,17 +37,26 @@ foreach ($items as $item){echo $item['name'],'<br>';}
 
     <div class="list">
         <h1 class="header"> To Do</h1>
-        <ul>
-            <li><span class="item">doe iets</span></li>
-            <a href="#" CLASS="done-button">Markeer als gedaan</a>
-
+        <?php if(!empty($items)):?>
+        <ul class="items">
+            <?php foreach ($items as $item):?>
+                <li>
+                    <span class="item <?php echo $item['done'] ? ' done': '' ?> "><?php echo $item['name'];?></span>
+                    <?php if(!$item['done']): ?>
+                        <a href="#" CLASS="done-button">Markeer als gedaan</a>
+                    <?php endif;?>
+                </li>
+            <?php endforeach;?>
         </ul>
-
+            <?php else: ?>
+                <p>geen items toegevoegd</p>
+            <?php endif;?>
         <form class="item-add" action="add.php" method="post">
             <input type="text" name="name" placeholder="Type u item hier" class="input" autocomplete="off" required>
             <input type="submit" value="Add" class="submit">
         </form>
     </div>
+    <a href="login.php?logout=true"><div class="logout"><p>Log Out</p></div></a>
 
 </body>
 </html>

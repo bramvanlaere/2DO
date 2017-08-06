@@ -24,7 +24,7 @@ if(!empty($_POST)){
     foreach( $results as $row ){
         if(password_verify($password, $row['password'])){
             session_start();
-            $_SESSION['user_id'] = $email;
+            $_SESSION['user_id'] = $row['ID'];
             header("Location: profile.php");
         }
         else
