@@ -34,13 +34,25 @@ $items = $itemsQuery->rowCount() ? $itemsQuery:[];
     <link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
+   
+   
+    <div class="float-left-area">
+<div class="inner-left">
 
-    <div class="list">
+
+<a href="login.php?logout=true"><div class="logout"><p>Log Out</p></div></a>
+
+</div>
+</div>
+
+<div class="float-right-area">
+<div class="inner-right">
+ <div class="list">
         <h1 class="header"> To Do</h1>
         <?php if(!empty($items)):?>
-        <ul class="items">
+        <ul class="list-group">
             <?php foreach ($items as $item):?>
-                <li>
+                <li class="list-group-item">
                     <span class="item <?php echo $item['done'] ? ' done': '' ?> "><?php echo $item['name'];?></span>
                     <?php if(!$item['done']): ?>
                         <a href="#" CLASS="done-button">Markeer als gedaan</a>
@@ -56,7 +68,14 @@ $items = $itemsQuery->rowCount() ? $itemsQuery:[];
             <input type="submit" value="Add" class="submit">
         </form>
     </div>
-    <a href="login.php?logout=true"><div class="logout"><p>Log Out</p></div></a>
+</div>
+</div>
+
+<div class="clear-floated"></div>
+
+
+
+    
 
 </body>
 </html>
